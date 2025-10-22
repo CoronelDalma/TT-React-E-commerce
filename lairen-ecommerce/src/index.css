@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-main: 'Poppins', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --bg: #1A1B26;
+  --text: #E0E0E0;
+  --accent: #00FFFF;
+  --card-bg: #2E2E3A;
+  --radius: 8px;
+  --transition: 0.3s ease;
+}
+
+/* === TEMAS === */
+.theme-crystal {
+  --bg: #f5f7fa;         /* gris azulado muy claro */
+  --text: #2e2e2e;       /* gris oscuro */
+  --accent: #a78bfa;     /* lavanda suave */
+  --card-bg: #ffffff;    /* blanco puro */
+}
+
+.theme-inferno {
+  --bg: #1e1b18;         /* marrón oscuro */
+  --text: #fef3c7;       /* crema cálido */
+  --accent: #fb923c;     /* naranja durazno */
+  --card-bg: #2a211d;    /* marrón rojizo */
+}
+
+.theme-mystic {
+  --bg: #0f1e19;         /* verde bosque profundo */
+  --text: #e6f4ea;       /* blanco verdoso */
+  --accent: #6ee7b7;     /* menta fresca */
+  --card-bg: #1a2f26;    /* verde oscuro */
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--text);
+}
+
+/* BUTTONS */
+button {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* TEXTS */
+h1, h2, h3, h4 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
