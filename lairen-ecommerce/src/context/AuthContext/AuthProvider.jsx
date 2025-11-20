@@ -1,7 +1,8 @@
 import { useState } from "react"
+import { AuthContext } from "./AuthContext";
 
 export const AuthProvider = ({ children }) => {
-    const { user, setUser } = useState(() => {
+    const [ user, setUser ] = useState(() => {
         const saved = sessionStorage.getItem("session");
         if (saved) {
             return JSON.parse(saved);
