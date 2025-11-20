@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ProductFormUi } from '../ProductFormUi/ProductFormUi';
+import { ProductFormUI } from '../ProductFormUi/ProductFormUi';
 import { validateProducts } from '../../../utils/validateProducts';
 import { uploadToImgbb } from '../../../services/uploadImage';
 import { createProduct } from '../../../services/products';
@@ -61,5 +61,5 @@ export const ProductFormContainer = () => {
 
     };
 
-    return <ProductFormUi product={product} errors={error} loading={loading} onChange={handleChange} onFileChange={setFile} onSubmit={handleSubmit}/>;
+    return <ProductFormUI product={product} errors={error} loading={loading} onChange={handleChange} onFileChange={setFile} onSubmit={handleSubmit}/>;
 }
