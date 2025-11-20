@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ProductFormUi } from '../ProductFormUi/ProductFormUi';
 import { validateProducts } from '../../../utils/validateProducts';
-import { uploadImage } from '../../../services/uploadImage';
+import { uploadToImgbb } from '../../../services/uploadImage';
 import { createProduct } from '../../../services/products';
 
 export const ProductFormContainer = () => {
@@ -37,7 +37,7 @@ export const ProductFormContainer = () => {
 
         try {
             // imageURl asi se llama en la API
-            const imageUrl = await uploadImage(file); // Asume que uploadImage es una función que sube la imagen y devuelve la URL
+            const imageUrl = await uploadToImgbb(file); // Asume que uploadImage es una función que sube la imagen y devuelve la URL
             const productData = {
                 ...product,
                 price: Number(product.price),
