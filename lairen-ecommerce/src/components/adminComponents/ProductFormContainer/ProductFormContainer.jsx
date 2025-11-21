@@ -38,15 +38,15 @@ export const ProductFormContainer = () => {
         }
 
         try {
-            // imageURl asi se llama en la API
-            const imgUrl = await uploadToImgbb(file); // Asume que uploadImage es una función que sube la imagen y devuelve la URL
+            // imgUrl asi se llama en la API
+            const imgUrl = await uploadToImgbb(file);
             const productData = {
                 ...product,
                 price: Number(product.price),
                 imgUrl
             }
 
-            await createProduct(productData); // Asume que createProduct es una función que crea el producto en la base de datos
+            await createProduct(productData); 
             alert('Producto creado con éxito');
             setProduct({
                 name: '',

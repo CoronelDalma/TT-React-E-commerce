@@ -1,5 +1,6 @@
 export const validateProducts = (product, fileRequired=true) => {
     const errors = {};
+    console.log("El product ", product);
 
     if (!product.name || product.name.trim() === '') {
         errors.name = 'El nombre del producto es obligatorio';
@@ -9,11 +10,11 @@ export const validateProducts = (product, fileRequired=true) => {
         errors.price = 'El precio del producto debe ser un número positivo';
     }
 
-    if (!product.expansion || product.extension.trim() === '') {
+    if (!product.expansion || product.expansion.trim() === '') {
         errors.expansion = 'La expansión del producto es obligatoria';
     }
 
-    if (fileRequired && (!product.image || product.image.trim() === '')) {
+    if (fileRequired && (!product.file)) {
         errors.image = 'La imagen del producto es obligatoria';
     }
 
