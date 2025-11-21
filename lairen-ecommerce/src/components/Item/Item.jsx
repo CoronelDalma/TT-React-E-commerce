@@ -1,6 +1,6 @@
 import './Item.css'
 
-export const Item = ({ name, price, imgUrl, expansión, description, children }) => {
+export const Item = ({ name, price, imgUrl, expansion, description, children }) => {
     return (
         // aca podria estar Link para ir a detalle
         <article className="item-card">
@@ -9,7 +9,7 @@ export const Item = ({ name, price, imgUrl, expansión, description, children })
             <p>Precio: ${price}</p>
             <p className='item-description-short'>Descripción: {description}</p>
             {children}
-            <p>Expansión: {expansión}</p>
+            <p>Expansión: {expansion}</p>
         </article>
     )
 }

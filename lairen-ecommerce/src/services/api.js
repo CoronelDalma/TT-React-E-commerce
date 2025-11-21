@@ -7,8 +7,8 @@ export const getItems=async() => {
         const data=await response.json();
         return data;    
     } catch (error) {
-    console.error('Fetch error:',error);
-    throw error;
+        console.error('Fetch error:',error);
+        throw error;
     }
 }
 

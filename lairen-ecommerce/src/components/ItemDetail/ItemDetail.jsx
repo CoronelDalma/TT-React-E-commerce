@@ -14,12 +14,12 @@ export const ItemDetail = ({ detail }) => {
                 <img src={detail.imgUrl} alt={detail.name} />
             </div> 
             <div>
-                <h4>{detail.Tipo}</h4>
+                <h4>{detail.tipo}</h4>
                 <h2>{detail.name}</h2>
-                <h5>{detail.expansión}</h5>               
+                <h5>{detail.expansion}</h5>               
                 <p>{detail.description}</p>
                 <p>Price: ${detail.price}</p>
-                <p>Rareza: {detail.Rareza}</p>
+                <p>Rareza: {detail.rareza}</p>
 
                 <Count onConfirm={handleAdd}/>
             </div>

@@ -27,8 +27,8 @@ export const ProductFormContainer = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true);
         setError({});
+        setLoading(true);
 
         const newErrors = validateProducts({...product, file});
         if (Object.keys(newErrors).length > 0) {

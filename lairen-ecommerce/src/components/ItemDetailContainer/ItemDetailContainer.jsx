@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getItemById } from "../../services/api";
+// import { getItemById } from "../../services/api";
+import { getItemById } from "../../services/products";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 
 export const ItemDetailContainer = () => {
