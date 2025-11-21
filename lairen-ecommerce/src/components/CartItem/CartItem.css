@@ -1,0 +1,85 @@
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-unit);
+    border-bottom: 1px solid var(--border-color);
+    /*background-color: var(--card-bg);*/
+    box-shadow: var(--shadow);
+}
+
+.item-image {
+    width: 60px; /* Tamaño pequeño para la imagen de la carta */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+    border: 1px solid #ddd;
+}
+
+.item-details {
+    flex-grow: 1; /* Ocupa el espacio central */
+}
+
+.item-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    color: #343a40;
+}
+
+.item-price {
+    /*color: var(--secondary-color);*/
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.item-subtotal {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-right: 20px;
+    width: 80px; /* Ancho fijo para alinear */
+    text-align: right;
+}
+
+/* --- Controles de Cantidad --- */
+.item-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.quantity-btn {
+    border: 1px solid var(--border-color);
+    width: 30px;
+    height: 30px;
+    padding: 0;
+}
+
+.quantity-btn:hover {
+    background-color: #f1f1f1;
+}
+
+.item-quantity {
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.remove-item-btn {
+    background: none;
+    border: none;
+    color: var(--danger);
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    padding: 0 5px;
+    line-height: 1;
+}
+
+.remove-item-btn:hover {
+    opacity: 1;
+}

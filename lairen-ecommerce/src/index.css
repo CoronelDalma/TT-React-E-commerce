@@ -10,11 +10,20 @@
   font-weight: 400;
 
   --bg: #1A1B26;
+  --bg-secondary: #f3eded;
   --text: #E0E0E0;
   --accent: #00FFFF;
+  --accent-secondary: #0056b3;
   --card-bg: #2E2E3A;
+  --card-bg-secondary: #197460;
+  --danger: #dc3545;
+  --danger-hover: #c82333;
   --radius: 8px;
   --transition: 0.3s ease;
+
+  --border-color: #dee2e6; /* Borde claro */
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra muy sutil */
+  --spacing-unit: 1rem;
 }
 
 /* === TEMAS === */
@@ -95,4 +104,11 @@ h1 {
 h2 {
   font-size: 1.6rem;
   margin-bottom: 1rem;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
 }

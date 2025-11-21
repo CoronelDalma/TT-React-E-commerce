@@ -1,0 +1,150 @@
+.cart-container {
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+}
+
+.cart-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.empty-cart p {
+    font-size: 1.2rem;
+    /*color: var(--secondary-color);*/
+    margin-bottom: 20px;
+}
+
+.back-to-shop-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    /*background-color: var(--text);*/
+    /*color: white;*/
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.back-to-shop-btn:hover {
+    background-color: var(--accent-secondary);
+}
+
+.cart-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 30px;
+}
+
+.cart-item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--card-bg-secondary);
+}
+
+/* --- Resumen del Carrito --- */
+.cart-summary {
+    padding: var(--spacing-unit) * 1.5;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+    height: fit-content; /* Se ajusta al contenido */
+}
+
+.summary-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.total-price {
+    color: var(--text);
+}
+
+/* --- Botones de Acción --- */
+.checkout-btn, .clear-cart-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.checkout-btn {
+    background-color: var(--text);
+    /*color: white;*/
+}
+
+.checkout-btn:hover {
+    background-color: var(--accent-secondary);
+    box-shadow: 0 3px 6px rgba(0, 123, 255, 0.3);
+}
+
+.clear-cart-btn {
+    background-color: var(--danger); /* Rojo sutil para "peligro" */
+    color: white;
+    opacity: 0.8;
+}
+
+.clear-cart-btn:hover {
+    opacity: 1;
+    background-color: var(--danger-hover);
+}
+
+/* --- Media Query para Responsividad (Móviles) --- */
+@media (max-width: 768px) {
+    .cart-content {
+        /* En móvil, los ítems y el resumen van en una sola columna */
+        grid-template-columns: 1fr; 
+    }
+
+    .cart-title {
+        font-size: 2rem;
+    }
+    
+    .cart-item {
+        /* Ajustar la disposición de los ítems en móvil */
+        flex-wrap: wrap; 
+        padding: 15px 10px;
+    }
+
+    .item-image {
+        width: 50px;
+        height: 70px;
+        margin-right: 10px;
+    }
+
+    .item-details {
+        min-width: 120px; /* Asegura que no se comprima demasiado */
+        margin-right: auto;
+    }
+    
+    .item-subtotal {
+        width: auto;
+        margin: 10px 0 0 auto;
+        order: 3; /* Mueve el subtotal y el botón de eliminar abajo a la derecha */
+        flex-basis: 100%; /* Ocupa toda la línea para mejor alineación */
+        text-align: right;
+    }
+
+    .remove-item-btn {
+        position: absolute; /* Posiciona el botón de eliminar arriba a la derecha */
+        top: 10px;
+        right: 10px;
+    }
+}

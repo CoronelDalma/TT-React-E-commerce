@@ -23,6 +23,34 @@ export const CartProvider = ({ children }) => {
             setCart([...cart, item]);
             alert(`${item.name} agregado`);
         } 
+        console.log("carrito:", cart);
+    }
+
+    const discountFromCart = (item) => {
+        if (exists(item.id)) {
+            const updatedCart = cart.map((prod) => {
+                if (prod.id == item.id) {
+                    const updatedQty = prod.quantity - 1;
+                    if (updatedQty>0) {
+                        alert(`Decrementado`);
+                        return {...prod, quantity: updatedQty}
+                    } else {
+                        alert(`${item.name} eliminado del carrito`);
+                        return null;
+                    }
+                        
+                } else {
+                    return prod;
+                }  
+            })
+        
+            const finalUpdatedCart = updatedCart.filter( prod => prod !== null );
+            setCart(finalUpdatedCart);
+            
+        } else {
+            alert(`${item.name} No pertenece al carrito`);
+        } 
+        console.log("carrito:", cart);
     }
 
     const clearCart = () => setCart([]);
@@ -42,7 +70,7 @@ export const CartProvider = ({ children }) => {
         return Math.round(total * 100) / 100;
     }
 
-    const values = { cart, addToCart, clearCart, removeItem, getTotalItems, getTotalPrice };
+    const values = { cart, addToCart, clearCart, removeItem, getTotalItems, getTotalPrice, discountFromCart };
     return (
         <CartContext.Provider value={values}>
             {children}
