@@ -4,14 +4,16 @@ import { validateProducts } from '../../../utils/validateProducts';
 import { uploadToImgbb } from '../../../services/uploadImage';
 import { createProduct } from '../../../services/products';
 
+import "../ProductFormContainer/ProductFormContainer.css";
+
 export const ProductFormContainer = () => {
-    const [ loading, setLoading ] = useState(true);
-    const [ error, setError ] = useState(null);
+    const [ loading, setLoading ] = useState();
+    const [ error, setError ] = useState("");
     const [ file, setFile ] = useState(null);
     const [ product, setProduct ] = useState({
         name: '',
         description: '',    
-        price: 0,
+        price: '',
         expansion: '',
     });
 
@@ -37,11 +39,11 @@ export const ProductFormContainer = () => {
 
         try {
             // imageURl asi se llama en la API
-            const imageUrl = await uploadToImgbb(file); // Asume que uploadImage es una función que sube la imagen y devuelve la URL
+            const imgUrl = await uploadToImgbb(file); // Asume que uploadImage es una función que sube la imagen y devuelve la URL
             const productData = {
                 ...product,
                 price: Number(product.price),
-                imageUrl
+                imgUrl
             }
 
             await createProduct(productData); // Asume que createProduct es una función que crea el producto en la base de datos
@@ -49,7 +51,7 @@ export const ProductFormContainer = () => {
             setProduct({
                 name: '',
                 description: '',    
-                price: 0,
+                price: '',
                 expansion: '',
             });
             setFile(null);

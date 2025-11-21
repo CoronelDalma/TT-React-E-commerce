@@ -28,7 +28,7 @@ function App() {
             <Routes>
               <Route element={<MainLayout/>} >
                 <Route path='/' element={<Home greeting={'Bienvenido a Lairen E-commerce'} />} />
-                <Route path='/expansion/expansion' element={<Category />} />
+                {/* <Route path='/expansion/expansion' element={<Category />} /> */}
                 <Route path='/item/:id' element={<ItemDetailContainer />} />
                 <Route path='/cart' element={<Cart />} />
                 <Route path='*' element={<h1>404 Not Found</h1>} />

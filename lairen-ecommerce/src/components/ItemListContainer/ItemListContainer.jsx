@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-// import { getItems } from "../../services/api";
-import { getItems } from "../../services/products";
+import { getItems } from "../../services/api";
+// import { getItems } from "../../services/products";
 import { ItemList } from "../ItemList/ItemList";
 import { useParams } from 'react-router-dom';
 
